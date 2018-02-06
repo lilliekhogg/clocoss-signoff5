@@ -34,7 +34,7 @@ do
         gcloud compute instances create \
         --machine-type n1-standard-1 \
         --tags http-server,https-server \
-        --metadata secret=$secretKey,ip=$serverIP \
+        --metadata secret=$secretKey,ip=$serverIP,vms=$i \
         --metadata-from-file \
         startup-script=../startup-script.sh \
         lillie-worker-$i \
