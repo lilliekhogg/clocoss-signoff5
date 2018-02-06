@@ -19,7 +19,9 @@ Script for executing signoff 1 for clocoss coursework by up718528.
 # How To Use
 To use the distributed worker app you will need to do the following tasks:
 ``` git clone https://github.com/lilliekhogg/clocoss-signoff1.git ```
+
 ``` cd clocoss-signoff5 ```
+
 ``` sh task5.sh [[numOfVms]] ```
 
 
