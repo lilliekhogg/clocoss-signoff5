@@ -1,20 +1,13 @@
 # clocoss-signoff5
 
-Script for executing signoff 1 for clocoss coursework by up718528.
+Script for executing signoff 5 for clocoss coursework by up718528.
 
 # what does this script do?
-1. Generate a random secretKey combination which is shared between VMs 
-2. Clone the clocoss-master-worker repository
-3. Install the server and its dependancies
-4. create N number of Vms
-5. once the Vms have been created they will do the following:
-  - download and install the client software 
-  - run the client using serverip and secretKey
-  - shut down when the client exits
-6. The VM will carry out 100 tasks
-7. Once the 100 tasks have been completed, the system will
-  - Delete client run Vms
-  - Delete client run disks
+1.update your sign-off task 1 to use preemptible instances
+2.use at least 8 full-CPU VMs in your testing
+3.check and be ready to report whether they all contributed to the work (this step need not be automated)
+hint: look in the console, under Stackdriver Logging > Logs > Global > clocoss-master-worker when your clients are running
+4.if you're interested, logging is implemented in the code in logging.js
 
 # How To Use
 To use the distributed worker app you will need to do the following tasks:
