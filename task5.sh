@@ -4,8 +4,7 @@ N=$1;
 echo "The number of vms created will be $N";
 
 secretKey=`openssl rand -base64 32`;
-echo "the secret key is $secretKey";
-workerName="lillie-worker";
+echo "vms created = $N";
 
 #establish server metadata
 serverIP=`curl -s -H "Metadata-Flavor: Google" \
@@ -32,12 +31,14 @@ gcloud config set compute/zone europe-west1-b;
 
 for i in `seq 1 $N`;
 do
-        gcloud compute instances create "$workerName"-"$i" \
-        --machine-type f1-micro \
+        gcloud compute instances create \
+        --machine-type n1-standard-1 \
         --tags http-server,https-server \
         --metadata secret=$secretKey,ip=$serverIP \
         --metadata-from-file \
-        startup-script=../startup-script.sh
+        startup-script=../startup-script.sh \
+        lillie-worker-$i \
+        --preemptible &
 done;
 
 #running server
@@ -49,6 +50,6 @@ sudo rm clocoss-master-worker -r;
 
 for i in `seq 1 $N`;
 do
-        gcloud compute instances delete "$workerName"-"$i";
+        gcloud -q compute instances delete `seq -f 'lillie-worker-%g' 1 $vms` &
 done;
 echo "servers successfully deleted";
