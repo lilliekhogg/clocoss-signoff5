@@ -32,7 +32,7 @@ do
         gcloud compute instances create "$workerName"-"$i" \
         --machine-type n1-standard-1 \
         --tags http-server,https-server \
-        --metadata secret=$secretKey,ip=$serverIP,vms=$i \
+        --metadata secret=$secretKey,ip=$serverIP \
         --metadata-from-file \
         startup-script=../startup-script.sh \
         --preemptible &
