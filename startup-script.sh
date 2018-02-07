@@ -16,8 +16,6 @@ secretKey=`curl -s -H "Metadata-Flavor: Google"  \
               "http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret"`;
 serverip=`curl -s -H "Metadata-Flavor: Google"  \
                "http://metadata.google.internal/computeMetadata/v1/instance/attributes/ip"`;
-vmNumber=`curl -s -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/instance/attributes/vms"`;
-
 
 #run the client
 npm run client $secretKey $serverip:8080;
