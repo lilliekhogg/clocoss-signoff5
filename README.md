@@ -12,7 +12,7 @@ hint: look in the console, under Stackdriver Logging > Logs > Global > clocoss-m
 # How To Use
 To use the distributed worker app you will need to do the following tasks:
 
-``` git clone https://github.com/lilliekhogg/clocoss-signoff1.git ```
+``` git clone https://github.com/lilliekhogg/clocoss-signoff5.git ```
 
 ``` cd clocoss-signoff5 ```
 
