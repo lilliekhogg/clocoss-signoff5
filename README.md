@@ -3,11 +3,8 @@
 Script for executing signoff 5 for clocoss coursework by up718528.
 
 # what does this script do?
-1. update your sign-off task 1 to use preemptible instances
-2. use at least 8 full-CPU VMs in your testing
-3. check and be ready to report whether they all contributed to the work (this step need not be automated)
-hint: look in the console, under Stackdriver Logging > Logs > Global > clocoss-master-worker when your clients are running
-4. if you're interested, logging is implemented in the code in logging.js
+1. updated sign-off task 1 to use preemptible instances
+2. runs at least 8 full-CPU VMs when testing
 
 # How To Use
 To use the distributed worker app you will need to do the following tasks:
